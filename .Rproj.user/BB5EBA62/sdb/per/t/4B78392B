@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "ts_stack <- function(x, window = floor(length(x) / 2)){\n  ts.mat <- NULL\n  for(i in 1:(length(x) - window + 1)){\n    ts.mat <- cbind(ts.mat, x[i:(i + window - 1)])\n  }\n  return(ts.mat)\n}\n",
+    "created" : 1468501728027.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1153768495",
+    "id" : "4B78392B",
+    "lastKnownWriteTime" : 1468501757,
+    "last_content_update" : 1468501757716,
+    "path" : "~/Werk/Software/ssaCUSUM/R/ts_stack.R",
+    "project_path" : "R/ts_stack.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

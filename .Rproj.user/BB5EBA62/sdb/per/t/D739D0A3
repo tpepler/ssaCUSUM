@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\\name{ts_stack}\n\\alias{ts_stack}\n%- Also NEED an '\\alias' for EACH other topic documented here.\n\\title{Stack time series\n%%  ~~function to do ... ~~\n}\n\\description{Utility function to stack a vector of time series data in a matrix, to be used in spectral analysis of the time series, for example.\n%%  ~~ A concise (1-5 lines) description of what the function does. ~~\n}\n\\usage{\nts_stack(x, window = floor(length(x)/2))\n}\n%- maybe also 'usage' for other objects documented here.\n\\arguments{\n  \\item{x}{Vector containing the time series data.\n%%     ~~Describe \\code{x} here~~\n}\n  \\item{window}{Window length of interest. The number of rows of the resultant matrix will be equal to this value.\n%%     ~~Describe \\code{window} here~~\n}\n}\n\\details{\n%%  ~~ If necessary, more details than the description above ~~\n}\n\\value{Returns a matrix with the number of rows equal to \\code{window}.\n%%  ~Describe the value returned\n%%  If it is a LIST, use\n%%  \\item{comp1 }{Description of 'comp1'}\n%%  \\item{comp2 }{Description of 'comp2'}\n%% ...\n}\n\\references{\n%% ~put references to the literature/web site here ~\n}\n\\author{Theo Pepler\n%%  ~~who you are~~\n}\n\\note{\n%%  ~~further notes~~\n}\n\n%% ~Make other sections like Warning with \\section{Warning }{....} ~\n\n\\seealso{\n%% ~~objects to See Also as \\code{\\link{help}}, ~~~\n}\n\\examples{\nxvec <- c(1:20)\nts_stack(x = xvec, window = 5)\n}\n% Add one or more standard keywords, see file 'KEYWORDS' in the\n% R documentation directory.\n\\keyword{ ~kwd1 }\n\\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line\n",
+    "created" : 1468508274576.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1462035014",
+    "id" : "D739D0A3",
+    "lastKnownWriteTime" : 1468508296,
+    "last_content_update" : 1468508296573,
+    "path" : "~/Werk/Software/ssaCUSUM/man/ts_stack.Rd",
+    "project_path" : "man/ts_stack.Rd",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

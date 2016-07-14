@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#********************************************************************************\n# Function to perform a SSA-CUSUM\n\nssa_cusum <- function(x, dates = NULL, L = length(x) %/% 4, q = 1, verbose = TRUE, diagplots = FALSE,\n                    MRL0 = 200, h.reps = 10000,\n                    #sim = FALSE,\n                    main = NULL, eps.out = NULL){\n\n  # Check to see if dates are NULL -- if so, simply number the observations\n  if(is.null(dates)){\n    dates <- c(1:length(x))\n  }\n\n  # Perform SSA on the time series\n  ssa.obj <- ssa_calc(x = x, dates = dates, L = L, q = q, diagplots = diagplots)\n\n  # Calculate alert threshold, h\n  #h<-h.calc(resids=(ssa.obj$obs-ssa.obj$exp)[1:L],MRL0=MRL0,reps=h.reps)\n  h <- h_calc(resids = (ssa.obj$obs - ssa.obj$exp)[1:(L*2)], MRL0 = MRL0, reps = h.reps)\n  #h<-h.calc(resids=((ssa.obj$obs-ssa.obj$exp)/sqrt(ssa.obj$exp))[1:L],MRL0=MRL0,reps=h.reps)\n\n  # Calculate the CUSUM\n  #cusum.obj<-cusum.calc(obs=ssa.obj$obs,exp=ssa.obj$exp,dates=ssa.obj$dates,q=ssa.obj$q,L=ssa.obj$L,h=h)\n  cusum.obj <- cusum_calc(ssa.obj = ssa.obj, h = h)\n\n  if(verbose){\n    # Print CUSUM alarm threshold value\n    cat(paste('CUSUM alarm threshold value: ', round(h, 2), '\\n', sep = ''))\n\n    # Plot the CUSUM\n    #plot_cusum(cusum.obj, main = main, eps.out = eps.out)\n    plot_cusum(cusum.obj, main = main)\n\n    # Alarm dates\n    cat('Alarm dates:\\n')\n    print(dates[cusum.obj$alarms])\n  }\n\n  # Output for simulation experiments\n  #if(sim){return(list(obs = cusum.obj$obs, exp = cusum.obj$exp, alarms = cusum.obj$alarms))}\n  #if(!verbose){return(cusum.obj)}\n  return(invisible(cusum.obj))\n}\n\n#********************************************************************************\n",
+    "created" : 1468492697271.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1217665661",
+    "id" : "A3C4926F",
+    "lastKnownWriteTime" : 1468503605,
+    "last_content_update" : 1468503605671,
+    "path" : "~/Werk/Software/ssaCUSUM/R/ssa_cusum.R",
+    "project_path" : "R/ssa_cusum.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

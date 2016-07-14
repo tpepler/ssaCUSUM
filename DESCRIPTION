@@ -1,0 +1,9 @@
+Package: ssaCUSUM
+Type: Package
+Title: SSA-CUSUM for Surveillance of Time Series Data
+Version: 0.0-1
+Author: Theo Pepler
+Maintainer: Theo Pepler <theo.pepler@glasgow.ac.uk>
+Description: Functions to perform the SSA-CUSUM (Singular Spectrum Analysis CUmulative SUM) procedure on a univariate time series. It is a nonparametric technique, useful for the monitoring of surveillance data with/without seasonal (or other types of cyclical) variation.
+License: GPL-3
+LazyData: TRUE

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#********************************************************************************\n# Function to calculate the alert threshold for SSA CUSUM charts\n\nh_calc <- function(resids, MRL0 = 200, reps = 10000){\n  # reps: number of replications used to estimate the value of h\n  # MRL0: average in-control run length\n\n  #print(mean(resids))\n  #resids<-resids-mean(resids)\n\n  hvals <- rep(NA, times = reps)\n  for(r in 1:reps){\n    data0 <- resids[sample(1:length(resids), size = MRL0, replace = TRUE)] * sample(c(-1, 1), size = MRL0, replace = TRUE)\n    cusumvals <- rep(NA, times = MRL0)\n    cusumvals[1] <- max(0, data0[1])\n    for(i in 2:MRL0){\n      cusumvals[i] <- max(0, cusumvals[i - 1] + data0[i])\n    }\n    hvals[r] <- max(cusumvals)\n  }\n  return(median(hvals))\n  #return(mean(hvals))\n}\n\n#********************************************************************************\n",
+    "created" : 1468492648246.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3866708233",
+    "id" : "98C30325",
+    "lastKnownWriteTime" : 1468493488,
+    "last_content_update" : 1468493488347,
+    "path" : "~/Werk/Software/ssaCUSUM/R/h_calc.R",
+    "project_path" : "R/h_calc.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
