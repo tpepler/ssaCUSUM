@@ -31,8 +31,9 @@ plot_cusum <- function(cusum.obj, main = NULL, eps.out = NULL){
   # Plot the CUSUM chart
   oldpar <- par()
   #layout(matrix(c(1, 2), ncol = 1))
-  par(mfrow = c(2, 1),
-    mar = c(3, 4.5, 4, 1))
+  par(#mfrow = c(2, 1),
+    mar = c(3, 4.5, 4, 1),
+    bty = 'o')
   if(!is.null(eps.out)){
     setEPS()
     postscript(eps.out[1], width = 8, height = 5)
@@ -102,7 +103,9 @@ plot_cusum <- function(cusum.obj, main = NULL, eps.out = NULL){
          xpd = TRUE,
          horiz = TRUE)
 
-  par(mfrow = oldpar$mfrow, mar = oldpar$mar)
+  par(#mfrow = oldpar$mfrow,
+      mar = oldpar$mar,
+      bty = oldpar$bty)
   if(!is.null(eps.out)){dev.off()}
 }
 
