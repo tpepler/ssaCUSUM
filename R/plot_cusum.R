@@ -32,7 +32,7 @@ plot_cusum <- function(cusum.obj, main = NULL, eps.out = NULL){
   oldpar <- par()
   #layout(matrix(c(1, 2), ncol = 1))
   par(#mfrow = c(2, 1),
-    mar = c(3, 4.5, 4, 1),
+    mar = c(3, 4.5, 4, 1), las = 1,
     bty = 'o')
   if(!is.null(eps.out)){
     setEPS()
@@ -104,7 +104,7 @@ plot_cusum <- function(cusum.obj, main = NULL, eps.out = NULL){
          horiz = TRUE)
 
   par(#mfrow = oldpar$mfrow,
-      mar = oldpar$mar,
+      mar = oldpar$mar, las = oldpar$las,
       bty = oldpar$bty)
   if(!is.null(eps.out)){dev.off()}
 }
